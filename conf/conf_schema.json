@@ -1,6 +1,14 @@
 {
   "PLAYER_NAME": {"userlvl":"basic","type":"string","description":"Your current character name.","_title":"Main Configuration"},
   "DBDRIVER": {"userlvl":"wip","type":"select","values":["postgresql"],"description":"Do not change."},
+  "PGSQL": {
+    "_title":"PostgreSQL Database",
+    "DBHOST": {"type":"string","description":"Database host"},
+    "DBPORT": {"type":"integer","description":"Database port"},
+    "DBNAME": {"type":"string","description":"Database name"},
+    "DBUSER": {"type":"string","description":"Database user"},
+    "DBPASS": {"type":"string","description":"Database password"}
+  },
   "HERIKA_NAME": {"userlvl":"basic","type":"string","description":"NPC Name. MUST MATCH their Skyrim in-game NPC name! If you are in the default profile leave it as The Narrator"},
   "PROMPT_HEAD": {"userlvl":"pro","type":"longstring","description":"System Prompt. Defines the rules of the roleplay."},
   "HERIKA_PERS": {"userlvl":"basic","type":"longstring","description":"Follower Personality. Treat it like a DnD character bio.","helpurl":"https://www.nexusmods.com/skyrimspecialedition/articles/5321"},

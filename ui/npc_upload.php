@@ -177,7 +177,7 @@ if (isset($_SESSION["PROFILE"]) && in_array($_SESSION["PROFILE"], $GLOBALS["PROF
 $message = '';
 
 // Connect to the database
-$conn = pg_connect("host=$host port=$port dbname=$dbname user=$username password=$password");
+$conn = pg_connect("host={$GLOBALS["PGSQL"]["DBHOST"]} dbname={$GLOBALS["PGSQL"]["DBNAME"]}} user={$GLOBALS["PGSQL"]["DBUSER"]} password={$GLOBALS["PGSQL"]["DBPASS"]}");
 
 if (!$conn) {
     echo "<div class='message'>Failed to connect to database: " . pg_last_error() . "</div>";

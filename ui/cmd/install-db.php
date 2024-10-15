@@ -2,15 +2,7 @@
 
 $enginePath =__DIR__.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR;
 
-// Database connection details
-$host = 'localhost';
-$port = '5432';
-$dbname = 'dwemer';
-$schema = 'public';
-$username = 'dwemer';
-$password = 'dwemer';
-
-$conn = pg_connect("host=$host port=$port dbname=$dbname user=$username password=$password");
+$conn = pg_connect("host={$GLOBALS["PGSQL"]["DBHOST"]} dbname={$GLOBALS["PGSQL"]["DBNAME"]}} user={$GLOBALS["PGSQL"]["DBUSER"]} password={$GLOBALS["PGSQL"]["DBPASS"]}");
 
 if (!$conn) {
     echo "Failed to connect to database.\n";

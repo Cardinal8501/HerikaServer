@@ -6,7 +6,7 @@ class sql
 
     public function __construct()
     {
-        $connString = "host=localhost dbname=dwemer user=dwemer password=dwemer";
+        $connString = "host={$GLOBALS["PGSQL"]["DBHOST"]} dbname={$GLOBALS["PGSQL"]["DBNAME"]}} user={$GLOBALS["PGSQL"]["DBUSER"]} password={$GLOBALS["PGSQL"]["DBPASS"]}";
         self::$link = pg_connect($connString);
         if (!self::$link) {
             die("Error in connection: " . pg_last_error());
