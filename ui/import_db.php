@@ -3,14 +3,7 @@
 session_start();
 
 $enginePath = __DIR__ . DIRECTORY_SEPARATOR .  ".." . DIRECTORY_SEPARATOR;
-
-// Database connection details
-$host = 'localhost';
-$port = '5432';
-$dbname = 'dwemer';
-$schema = 'public';
-$username = 'dwemer';
-$password = 'dwemer';
+require_once($enginePath . "conf" . DIRECTORY_SEPARATOR . "conf.php");
 
 // Check if the form has been submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

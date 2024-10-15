@@ -1,12 +1,15 @@
 <?php
 
+$enginePath = __DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR;
+require_once($enginePath . "conf" . DIRECTORY_SEPARATOR . "conf.php");
+
 class sql
 {
     private static $link = null;
 
     public function __construct()
     {
-        $connString = "host={$GLOBALS["PGSQL"]["DBHOST"]} dbname={$GLOBALS["PGSQL"]["DBNAME"]}} user={$GLOBALS["PGSQL"]["DBUSER"]} password={$GLOBALS["PGSQL"]["DBPASS"]}";
+        $connString = "host={$GLOBALS["PGSQL"]["DBHOST"]} dbname={$GLOBALS["PGSQL"]["DBNAME"]} user={$GLOBALS["PGSQL"]["DBUSER"]} password={$GLOBALS["PGSQL"]["DBPASS"]}";
         self::$link = pg_connect($connString);
         if (!self::$link) {
             die("Error in connection: " . pg_last_error());

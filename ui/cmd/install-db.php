@@ -1,9 +1,9 @@
 <?php
 
 $enginePath =__DIR__.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR;
-
-$conn = pg_connect("host={$GLOBALS["PGSQL"]["DBHOST"]} dbname={$GLOBALS["PGSQL"]["DBNAME"]}} user={$GLOBALS["PGSQL"]["DBUSER"]} password={$GLOBALS["PGSQL"]["DBPASS"]}");
-
+require_once($enginePath . "conf" . DIRECTORY_SEPARATOR . "conf.php");
+$conn = pg_connect("host={$GLOBALS["PGSQL"]["DBHOST"]} dbname={$GLOBALS["PGSQL"]["DBNAME"]} user={$GLOBALS["PGSQL"]["DBUSER"]} password={$GLOBALS["PGSQL"]["DBPASS"]}");
+$schema = $GLOBALS["PGSQL"]["DBNAME"];
 if (!$conn) {
     echo "Failed to connect to database.\n";
     die();
@@ -30,7 +30,7 @@ foreach ($Q as $QS) {
 $sqlFile = $enginePath.'/data/database_default.sql';
 
 // Command to import SQL file using psql
-$psqlCommand = "PGPASSWORD=$password psql -h $host -p $port -U $username -d $dbname -f $sqlFile";
+$psqlCommand = "PGPASSWORD={$GLOBALS["PGSQL"]["DBPASS"]}} psql -h {$GLOBALS["PGSQL"]["DBHOST"]} -p {$GLOBALS["PGSQL"]["DBPASS"]} -U {$GLOBALS["PGSQL"]["DBUSER"]}} -d {$GLOBALS["PGSQL"]["DBNAME"]} -f $sqlFile";
 
 // Execute psql command
 $output = [];

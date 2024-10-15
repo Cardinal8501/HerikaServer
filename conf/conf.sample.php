@@ -2,11 +2,11 @@
 
 $DBDRIVER="postgresql";
 
-$PGSQL['host'] = 'localhost';
-$PGSQL['dbname'] = 'dwemer';
-$PGSQL['user'] = 'dwemer';
-$PGSQL['password'] = 'dwemer';
-$PGSQL['port'] = '5432';
+$GLOBALS["PGSQL"]['DBHOST'] = 'postgres';
+$GLOBALS["PGSQL"]['DBNAME'] = 'dwemer';
+$GLOBALS["PGSQL"]['DBUSER'] = 'dwemer';
+$GLOBALS["PGSQL"]['DBPASS'] = 'dwemer';
+$GLOBALS["PGSQL"]['DBPORT'] = '5432';
 
 $PLAYER_NAME="Prisoner";
 $HERIKA_NAME="The Narrator";
