@@ -2,9 +2,8 @@
 
 $enginePath =__DIR__.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR;
 require_once($enginePath . "conf" . DIRECTORY_SEPARATOR . "conf.php");
-
-$conn = pg_connect("host={$GLOBALS["PGSQL"]["DBHOST"]} dbname={$GLOBALS["PGSQL"]["DBNAME"]}} user={$GLOBALS["PGSQL"]["DBUSER"]} password={$GLOBALS["PGSQL"]["DBPASS"]}");
-
+$conn = pg_connect("host={$GLOBALS["PGSQL"]["DBHOST"]} dbname={$GLOBALS["PGSQL"]["DBNAME"]} user={$GLOBALS["PGSQL"]["DBUSER"]} password={$GLOBALS["PGSQL"]["DBPASS"]}");
+$schema = $GLOBALS["PGSQL"]["DBNAME"];
 if (!$conn) {
     echo "Failed to connect to database.\n";
     die();
